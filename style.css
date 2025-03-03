@@ -1,0 +1,158 @@
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    /* to make  1rem = 10px */
+}
+
+.container {
+    height: 100%;
+    position: relative;
+
+}
+
+/* Start Navigation Menu */
+.menu {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+
+.menu-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    margin: 1rem;
+    width: 10rem;
+    height: 4rem;
+    overflow: hidden;
+    background-color: #333;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+.menu-btn div {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    width: inherit;
+    height: inherit;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+    perspective: 100rem;
+    position: relative;
+    top: 0;
+    transition: all 0.5s ease-in;
+
+}
+
+.show .menu-btn div {
+    top: -4rem;
+}
+
+.menu-btn div:first-child {
+    background-color: #c0ff61;
+}
+
+.menu-btn div:last-child {
+    color: #c0ff61;
+}
+
+.menu-btn div span {
+    transition: transform 0.3s ease-in;
+    width: 100%;
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.menu-btn:hover div span {
+    transform: rotateX(90deg);
+}
+
+.menu-btn span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+.menu-btn div:first-child:hover span {
+    transform: rotateX(90deg);
+}
+
+.menu-btn div:last-child:hover span {
+    transform: rotateX(90deg);
+}
+
+.nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50rem;
+    height: 60rem;
+    background-color: #c0ff61;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10rem 0 5rem 5rem;
+    clip-path: circle(0% at 80% 5%);
+    transition: all .5s ease-in;
+}
+
+.show .nav {
+    clip-path: circle(141.3% at 100% 0);
+}
+
+/* --------nav-link */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-link {
+    font-size: 4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #555;
+    display: block;
+    transform: translateY(20%) translateX(10%);
+    opacity: 0;
+}
+
+.show .nav-link {
+    transform: translateY(0%) translateX(0%);
+    opacity: 1;
+    transition: all .2s var(--i) ease-in-out;
+
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-group {
+    display: flex;
+    gap: 2rem;
+}
